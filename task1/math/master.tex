@@ -1,0 +1,81 @@
+
+
+\documentclass[../master.tex]{subfiles}
+\begin{document}
+
+\textbf{Теорема}. Асимптотическое решение задачи~1 имеет вид:
+\begin{align*}
+u &= 1 + u_0^{\text{II}}(x, \tau)  + 
+ \varepsilon^{1/3}\big(u_1^{\text{I}}( \xi_1, \xi_2, \theta)  + u_1^{\text{II}}(  \xi_1, \xi_2, \tau)\big), + O(\varepsilon^{2/3}), \\
+v&= \varepsilon^{2/3}\big(v_2^{\text{I}}(\xi_1, \xi_2, \theta) + v_2^{\text{II}}(\xi_1, \xi_2, \tau)\big) +  O(\varepsilon), \\
+w &= \varepsilon^{1/3} w_1^{\text{I}}(  \xi_1, \xi_2, \theta) + O(\varepsilon^{2/3}), \\
+p &= p_0 + \varepsilon^{2/3}p_2^{\text{II}}(\xi_1, \xi_2, \tau)+ O(\varepsilon),
+\end{align*}
+где $\displaystyle \xi_1 = \dfrac{x - x_0}{\varepsilon},\ 
+\xi_2 = \dfrac{z - z_0}{\varepsilon}, \ 
+\tau = \dfrac{y_w}{\varepsilon},\ \theta= \dfrac{y_w}{\varepsilon^{\frac{4}{3}}}$,
+
+$y_w = y-y_s$~--- переменная, выравнивающая границу,
+
+$\tau$ и $\theta$~--- погранслойные переменные для II и I палуб соответственно. 
+
+ Функция $u_0^{\text{II}} = u^*-1$, $u_1^\mathrm{II} = \mu \dfrac{\partial u_0^{\text{II}}}{\partial \tau}\bigg|_{ x=x_0 }$, где
+функция $u^* =  f^{\prime}\bigg(\dfrac{\tau}{\sqrt{x}}\bigg) $, 
+
+$f(\gamma)$~--- функция Блазиуса,  являющаяся решением следующей краевой задачи: 
+\[ f^{\prime \prime \prime} = -\frac{1}{2}f f^{\prime \prime}, \quad 
+f(0) = f^{\prime}(0) = 0, \
+f^{\prime}(\infty) = 1.
+\]
+
+Функции $u_1^{\text{I}}$, $v_2^{\text{I}}$, $w_1^{\text{I}}$ определяются из соотношений:
+\[
+ u^{\dagger} = u_1^{\text{I}} + u_1^{\text{II}}\big|_{ \tau=0} + \theta\dfrac{\partial u_0^{\text{II}}}{\partial \tau}\bigg|_{{\begin{smallmatrix} \tau=0 \\ x=x_0 \end{smallmatrix}}}, \
+ v^{\dagger} = v_2^{\text{I}} + v_2^{\text{II}}\big|_{\tau=0}, \
+ w^{\dagger} = w_1^{\text{I}},
+\]
+где функции $u^\dagger$, $v^\dagger$, $w^\dagger$ являются решением краевой задачи для системы уравнений Прандтля с самоиндуцированным давлением:
+\begin{equation*}
+\begin{cases}
+u^{\dagger}\bigg(\dfrac{\partial u^{\dagger}}{\partial\xi_1} - \dfrac{\partial \mu}{\partial\xi_1}\dfrac{\partial u^{\dagger}}{\partial\theta} \bigg)+ w^{\dagger}\bigg(\dfrac{\partial u^{\dagger}}{\partial\xi_2} - \dfrac{\partial \mu}{\partial\xi_2}\dfrac{\partial u^{\dagger}}{\partial\theta} \bigg) + \\ 
+\quad \hfill +v^{\dagger}\dfrac{\partial u^{\dagger}}{\partial\theta} + \dfrac{\partial p_2^{\text{II}}}{\partial \xi_1}\bigg|_{\tau=0} -  \dfrac{\partial^2u^{\dagger}}{\partial\theta^2} =0, 
+\\[2ex]
+ v^{\dagger}\dfrac{\partial w^{\dagger}}{\partial\theta} + w^{\dagger} \bigg(\dfrac{\partial w^{\dagger}}{\partial\xi_2} - \dfrac{\partial \mu}{\partial\xi_2}\dfrac{\partial w^{\dagger}}{\partial\theta} \bigg) + u^{\dagger} \bigg(\dfrac{\partial w^{\dagger}}{\partial\xi_1} - \dfrac{\partial \mu}{\partial\xi_1}\dfrac{\partial w^{\dagger}}{\partial\theta} \bigg)-\\ \quad \hfill - \dfrac{\partial^2 w^\dagger}{\partial \theta^2}= 0,
+ \\[2ex]
+\dfrac{\partial u^{\dagger}}{\partial\xi_1} - \dfrac{\partial \mu}{\partial\xi_1}\dfrac{\partial u^{\dagger}}{\partial\theta} + \dfrac{\partial w^{\dagger}}{\partial\xi_2} - \dfrac{\partial \mu}{\partial\xi_2}\dfrac{\partial w^{\dagger}}{\partial\theta} + \dfrac{\partial v^{\dagger}}{\partial \theta} = 0,
+\end{cases}
+\end{equation*}
+\begin{align*}
+&u^{\dagger} \big|_{\theta=0} = 0,\
+v^{\dagger} \big|_{\theta=0} = 0, \
+w^{\dagger} \big|_{\theta=0} = 0,\\
+&\dfrac{\partial u^{\dagger}}{\partial \theta}\bigg|_{\theta \rightarrow \infty} = \dfrac{\partial u_0^{\text{II}}}{\partial \tau}\bigg|_{\begin{smallmatrix} \tau=0\\ x=x_0   \end{smallmatrix}}, \
+w^{\dagger} \big|_{\theta\to \infty} =0,\\
+&u^{\dagger} \big|_{\xi_{1,2} \rightarrow \pm \infty} = \theta \dfrac{\partial u_0^{\text{II}}}{\partial \tau}\bigg|_{{\begin{smallmatrix} \tau=0\\ x=x_0  \end{smallmatrix}}}, \
+v^{\dagger} \big|_{\xi_{1,2} \rightarrow \pm \infty} =0,\
+w^{\dagger} \big|_{\xi_{1,2} \rightarrow \pm \infty} =0.
+\end{align*}
+
+Функция $v_2^{\text{II}}$ является решением краевой задачи для уравнения типа Рэлея: ($\displaystyle \Delta_{\xi_1, \xi_2, \tau} = \frac{\partial^2}{\partial  \xi_1^2} + \frac{\partial^2}{\partial \xi_2^2} + \frac{\partial^2}{\partial \tau^2}$):
+\[ u^*\big|_{\begin{smallmatrix} \\ x=x_0  \end{smallmatrix}}\Delta_{\xi_1, \xi_2, \tau}v_2^{\text{II}} - v_2^{\text{II}}\dfrac{\partial^2 u^*}{\partial \tau^2}\bigg|_{\begin{smallmatrix} \tau=0\\ x=x_0 \end{smallmatrix}} = 0\]
+\[ v_2^{\text{II}} \big|_{\xi_{1,2} \rightarrow \pm \infty} = 0, \
+ v_2^{\text{II}} \big|_{\tau \rightarrow \infty} = 0, \
+v_2^{\text{II}} \big|_{\tau =0} = v^{\dagger}\big|_{\theta \rightarrow \infty}.\]
+
+
+Давление $p_2^{\text{II}}$  определяется равенством:
+\[
+p_2^\mathrm{II} = \int\limits_{-\infty}^{\xi_2} \frac{\partial w_2^\mathrm{II}}{\partial \xi_1}\,d\xi_2',
+\]
+где функция $w_2^{\text{II}}$ является решением краевой задачи для уравнения Пуассона ($\Delta_{\xi_1, \xi_2} = \dfrac{\partial^2}{\partial  \xi_1^2} + \dfrac{\partial^2}{\partial \xi_2^2}$):
+\[
+u^*\big|_{ x=x_0} \Delta_{\xi_1, \xi_2}w_2^{\text{II}} = \dfrac{\partial v_2^{\text{II}}}{\partial \xi_2}\dfrac{\partial u^*}{\partial \tau}\bigg|_{x=x_0}\!\!\! - \dfrac{\partial^2 v_2^{\text{II}}}{\partial \xi_2 \partial\tau}u^*\big|_{x=x_0 },\
+w_2^{\text{II}} \big|_{\xi_{1,2} \rightarrow \pm \infty} = 0.
+\]
+ Выражение для самоиндуцированного давления можно записать в виде:
+\[
+\dfrac{\partial p_2^{\text{II}}}{\partial \xi_1}\bigg|_{\tau=0} =- v^\dagger\big|_{\theta\to\infty} \dfrac{\partial u_0^{\text{II}}}{\partial \tau}\bigg|_{\begin{smallmatrix}
+   \tau=0 \\ x=x_0 \end{smallmatrix}}.
+\]
+
+\end{document}
