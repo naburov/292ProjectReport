@@ -78,4 +78,150 @@ w_2^{\text{II}} \big|_{\xi_{1,2} \rightarrow \pm \infty} = 0.
    \tau=0 \\ x=x_0 \end{smallmatrix}}.
 \]
 
+\textbf{Доказательство}. Согласно теории двухпалубного пограничного слоя можно выделить три зоны потока, набегающего на поверхность: $\text{I}, \text{II}, \text{EXT}$. Тогда изначальное асимптотическое разложение для компонент скорости $u, v, w$, а также давления $p$ будет иметь вид:
+\begin{equation}
+  \begin{gathered}[b]
+	u = 1 + u_0^{\text{II}} + \varepsilon^{1/3}(u_1^{\text{EXT}}  +  u_1^{\text{II}} + u_1^{\text{I}}) + \varepsilon^{2/3} (u_2^{\text{EXT}} +  u_2^{\text{II}} + u_2^{\text{I}}) + \varepsilon^{3/3} (u_3^{\text{EXT}} +  u_3^{\text{II}} + u_3^{\text{I}}) \\
+	v = \varepsilon^{2/3} (v_2^{\text{EXT}} +  v_2^{\text{II}} + v_2^{\text{I}}) + \varepsilon^{3/3} (v_3^{\text{EXT}} +  v_3^{\text{II}} + v_3^{\text{I}}) \\
+	w = \varepsilon^{1/3}(w_1^{\text{EXT}}  +  w_1^{\text{II}} + w_1^{\text{I}}) + \varepsilon^{2/3} (w_2^{\text{EXT}} +  w_2^{\text{II}} + w_2^{\text{I}}) + \varepsilon^{3/3} (w_3^{\text{EXT}} +  w_3^{\text{II}} + w_3^{\text{I}}) \\
+	p = p_0 + \varepsilon^{1/3}(p_1^{\text{EXT}}  +  p_1^{\text{II}} + p_1^{\text{I}}) + \varepsilon^{2/3} (p_2^{\text{EXT}} +  p_2^{\text{II}} + p_2^{\text{I}}) + \varepsilon^{3/3} (p_3^{\text{EXT}} +  p_3^{\text{II}} + p_3^{\text{I}})
+  \end{gathered}
+\end{equation}
+
+Эти выражения для $u, v, w, p$ необходимо подставить в систему уравнений Навье-Стокса.
+Для того, чтобы получить уравнения в области EXT, необходимо устремить погранслойные переменные $\theta$ и $\tau$ к бесконечности, и сгруппировать слагаемые при одинаковых степенях при $\varepsilon$. При устремлении $\theta$ к бесконечности все функции c верхним индексом I будут стремиться к 0, а при устремлении $\tau$ к бесконечности к 0 будут стремиться все функции с верхним индексом II.
+При $\varepsilon=-2/3$ получим следующую систему уравнений:
+\begin{equation}
+	\begin{cases}
+	\dfrac{\partial p_1^{\text{EXT}}}{\partial \xi_1} + \dfrac{\partial u_1^{\text{EXT}}}{\partial \xi_1} = 0 \\[2ex]
+	\dfrac{\partial p_1^{\text{EXT}}}{\partial \xi_2} + \dfrac{\partial w_1^{\text{EXT}}}{\partial \xi_1} = 0 \\[2ex]
+	\dfrac{\partial w_1^{\text{EXT}}}{\partial \xi_2} + \dfrac{\partial u_1^{\text{EXT}}}{\partial \xi_1} = 0
+	\end{cases}
+\end{equation}
+
+Для того, чтобы получить уравнения в области II, необходимо устремить погранслойные переменную $\theta$ к бесконечности, и сгруппировать слагаемые при одинаковых степенях при $\varepsilon$. 
+При $\varepsilon=-1$ получим следующую систему уравнений:
+\begin{equation}
+	\begin{cases}
+	\dfrac{\partial u_0^{\text{II}}}{\partial \xi_1} + u_0^{\text{II}}\dfrac{\partial u_0^{\text{II}}}{\partial \xi_1} = 0 \\[2ex]
+	\dfrac{\partial u_0^{\text{II}}}{\partial \xi_1} = 0 \\[2ex]
+	\end{cases}
+\end{equation}
+
+При $\varepsilon=-2/3$ получим следующую систему уравнений:
+\begin{equation}
+	\begin{cases}
+	u^*\bigg(\dfrac{\partial u_1^{\text{II}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_0^{\text{II}}}{\partial \tau} \bigg) = 0 \\[2ex]
+	u^* \dfrac{\partial w_1^{\text{II}}}{\partial \xi_1} = 0 \\[2ex]
+	- \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_0^{\text{II}}}{\partial \tau} + \dfrac{\partial u_1^{\text{II}}}{\partial \xi_1} + \dfrac{\partial w_1^{\text{II}}}{\partial \xi_2} = 0
+	\end{cases}
+\end{equation}
+
+При $\varepsilon=-1/3$ получим следующую систему уравнений:
+\begin{equation}
+	\begin{cases}
+		u^*\bigg(\dfrac{\partial u_2^{\text{II}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_1^{\text{II}}}{\partial \tau} \bigg)  + v_2^{\text{II}}\dfrac{\partial u_0^{\text{II}}}{\partial \tau} + \dfrac{\partial p_2^{\text{II}}}{\partial \xi_1}= 0 \\[2ex]
+		\dfrac{\partial p_2^{\text{II}}}{\partial \tau} + \dfrac{\partial v_2^{\text{II}}}{\partial \xi_1}u^* = 0  \\[2ex]
+		\dfrac{\partial p_2^{\text{II}}}{\partial \xi_1} + \dfrac{\partial w_2^{\text{II}}}{\partial \xi_1}u^* = 0 \\[2ex]
+		-\dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_1^{\text{II}}}{\partial \tau} +  \dfrac{\partial v_2^{\text{II}}}{\partial \tau} + \dfrac{\partial w_2^{\text{II}}}{\partial \xi_2} +  \dfrac{\partial u_2^{\text{II}}}{\partial \xi_1} = 0
+	\end{cases}
+\end{equation}
+
+Для того, чтобы получить уравнения в области I, необходимо сгруппировать слагаемые при одинаковых степенях при $\varepsilon$. 
+При $\varepsilon=-1$ получим, что:
+\begin{equation}
+	\dfrac{\partial p_1^{\text{I}}}{\partial \theta} = 0
+\end{equation}
+
+При $\varepsilon=-2/3$ получим следующую систему:
+\begin{equation}
+	\begin{cases}
+		u^*\dfrac{\partial u_1^{\text{I}}}{\partial \xi_1} -u^* \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_1^{\text{I}}}{\partial \theta}  + w_1^{\text{I}}\dfrac{\partial u_0^{\text{II}}}{\partial \xi_2} +  u_1^{\text{I}}\dfrac{\partial u_0^{\text{II}}}{\partial \xi_1} = 0 \\[2ex]		
+		\dfrac{\partial p_2^{\text{I}}}{\partial \theta} = 0 \\[2ex]
+		u^*\bigg( \dfrac{\partial w_1^{\text{I}}}{\partial \xi_1} -  \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) = 0 \\[2ex]
+		-\dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_1^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial v_2^{\text{I}}}{\partial \theta} - 
+			 \dfrac{\partial \mu}{\partial \xi_2} \dfrac{\partial w_1^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial u_1^{\text{I}}}{\partial \xi_1} + 
+			 \dfrac{\partial w_1^{\text{I}}}{\partial \xi_2} = 0
+	\end{cases}
+\end{equation}
+
+При $\varepsilon=-1/3$ получим следующую систему:
+\begin{equation}
+	\begin{cases}
+		-\dfrac{\partial \mu}{\partial \xi_2} \dfrac{\partial u_2^{\text{I}}}{\partial \theta} -\dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_2^{\text{I}}}{\partial \theta} + 
+		\dfrac{\partial v_3^{\text{II}}}{\partial \theta} + \dfrac{\partial u_2^{\text{I}}}{\partial \xi_2} + \dfrac{\partial u_2^{\text{I}}}{\partial \xi_1} = 0 \\[2ex]
+		\dfrac{p_3^{\text{I}}}{\partial \theta} + u^*\bigg(\dfrac{\partial v_2^{\text{I}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial v_2^{\text{I}}}{\partial \theta} \bigg )= 0 \\[2ex]
+		u^*\bigg( \dfrac{\partial u_2^{\text{I}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial u_2^{\text{I}}}{\partial \theta} \bigg) +
+			(u_1^{\text{I}} + u_1^{\text{II}})\bigg(  \dfrac{\partial w_1^{\text{I}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) +
+			(v_2^{\text{I}} + v_2^{\text{II}})\dfrac{\partial w_1^{\text{I}}}{\partial \theta} + \\[2ex] \quad \hfill +
+			(w_1^{\text{I}} + w_1^{\text{II}})\bigg(  \dfrac{\partial w_1^{\text{I}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) -
+			\dfrac{\partial^2 w_1^{\text{I}}}{\partial \theta^2} = 0 \\[2ex]
+		-\dfrac{\partial \mu}{\partial \xi_2} \dfrac{\partial u_2^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial v_3^{\text{I}}}{\partial \theta} - 
+			 \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_2^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial u_2^{\text{I}}}{\partial \xi_2} + 
+			 \dfrac{\partial u_2^{\text{I}}}{\partial \xi_1} = 0
+	\end{cases}
+\end{equation}
+
+Разложим функции с верхним индексом II в асимтотический ряд и заменим их в системах уравений на слой I: 
+\begin{align*}
+	f(..., \tau) = f\big|_{\tau=0} + \epsilon\tau\dfrac{\partial f}{\partial \tau}\bigg|_{\tau = 0} + O(\varepsilon^{2})& = \\
+	=  f\big|_{\tau=0} + \epsilon^{1/3}\theta\dfrac{\partial f}{\partial \tau}\bigg|_{\tau = 0} + O(\varepsilon^{2/3})
+\end{align*}
+
+Получим для системы при $\varepsilon=-2/3$:
+\begin{equation}
+	\begin{cases}
+		u^*\big|_{\tau=0}\bigg( \dfrac{\partial u_1^{\text{I}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_1^{\text{I}}}{\partial \theta} \bigg) = 0 \\[2ex]
+		\dfrac{\partial p_2^{\text{I}}}{\partial \theta} = 0 \\[2ex]
+		u^*\big|_{\tau=0}\bigg( \dfrac{\partial w_1^{\text{I}}}{\partial \xi_1} -  \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) = 0 \\[2ex]
+		-\dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_1^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial v_2^{\text{I}}}{\partial \theta} - 
+			 \dfrac{\partial \mu}{\partial \xi_2} \dfrac{\partial w_1^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial u_1^{\text{I}}}{\partial \xi_1} + 
+			 \dfrac{\partial w_1^{\text{I}}}{\partial \xi_2} = 0
+	\end{cases}
+\end{equation}
+
+Получим для системы при $\varepsilon=-1/3$:
+\begin{equation}
+	\begin{cases}
+		\bigg(w_1^{\text{I}} + w_1^{\text{II}}\big|_{\tau=0}\bigg) \bigg(\dfrac{\partial u_1^{\text{I}}}{\partial \xi_2}
+		- \dfrac{\partial \mu}{\partial \xi_2}\dfrac{\partial u_1^{\text{I}}}{\partial \theta} \bigg) + v_2^{\text{II}} \bigg(
+		\dfrac{\partial u^*}{\partial \tau}\bigg|_{\tau=0} + \dfrac{\partial u_1^{\text{I}}}{\partial \theta} \bigg)+
+		\\[2ex] \quad \hfill  u_1^{\text{I}}\bigg(\dfrac{\partial u_1^{\text{I}}}{\partial \xi_1} + \dfrac{\partial u_1^{\text{II}}}{\partial \xi_1}\bigg|_{\tau=0} \bigg) - \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial u^*}{\partial \tau}\bigg|_{\tau=0}(w_1^{\text{I}} + u_1^{\text{I}}) + v_2^{\text{II}}\big|_{\tau=0}\dfrac{\partial u_1^{\text{I}}}{\partial \theta} +  \\[2ex] \quad \hfill + w_1^{\text{I}}\dfrac{\partial u_1^{\text{II}}}{\partial \xi_2}\bigg|_{\tau=0} + \theta \dfrac{\partial u^*}{\partial \tau}\bigg|_{\tau=0}\bigg(\dfrac{\partial u_1^{\text{I}}}{\partial \xi_1} - \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial u_1^{\text{I}}}{\partial \theta} \bigg) - \dfrac{\partial^2 u_1^{\text{I}}}{\partial \theta^2} = 0 \\[2ex]
+		\dfrac{\partial p_3^{\text{I}}}{\partial \theta} = 0 \\[2ex]
+		\bigg(u_1^{\text{I}} + u_1^{\text{II}}\big|_{\tau=0}\bigg)\bigg(\dfrac{\partial w_1^{\text{I}}}{\partial \xi_1}
+		- \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) + v_2^{\text{I}} \dfrac{\partial w_1^{\text{I}}}{\partial \theta} + \\[2ex] \quad \hfill + v_2^{\text{II}}\bigg|_{\tau=0}\dfrac{\partial w_1^{\text{I}}}{\partial \theta} + \bigg(w_1^{\text{I}} + w_1^{\text{II}}\big|_{\tau=0}\bigg) \bigg(\dfrac{\partial w_1^{\text{I}}}{\partial \xi_2} - \dfrac{\partial \mu}{\partial \xi_2}\dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) + \\[2ex] \quad \hfill + \theta \dfrac{\partial u^*}{\partial \tau}\bigg|_{\tau=0} \bigg(\dfrac{\partial w_1^{\text{I}}}{\partial \xi_1}	- \dfrac{\partial \mu}{\partial \xi_1}\dfrac{\partial w_1^{\text{I}}}{\partial \theta} \bigg) - \dfrac{\partial^2 w_1^{\text{I}}}{\partial \theta^2} = 0 \\[2ex]
+		-\dfrac{\partial \mu}{\partial \xi_2} \dfrac{\partial u_2^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial v_3^{\text{I}}}{\partial \theta} - 
+			 \dfrac{\partial \mu}{\partial \xi_1} \dfrac{\partial u_2^{\text{I}}}{\partial \theta} + 
+			 \dfrac{\partial u_2^{\text{I}}}{\partial \xi_2} + 
+			 \dfrac{\partial u_2^{\text{I}}}{\partial \xi_1} = 0		
+	\end{cases}
+\end{equation}
+
+Сделаем следующие замены в системах уравений при  $\varepsilon=-1/3$ и  $\varepsilon=-2/3$:
+\[
+ u^{\dagger} = u_1^{\text{I}} + u_1^{\text{II}}\big|_{ \tau=0} + \theta\dfrac{\partial u_0^{\text{II}}}{\partial \tau}\bigg|_{{\begin{smallmatrix} \tau=0 \\ x=x_0 \end{smallmatrix}}}, \
+ v^{\dagger} = v_2^{\text{I}} + v_2^{\text{II}}\big|_{\tau=0}, \
+ w^{\dagger} = w_1^{\text{I}},
+\]
+
+И получим: 
+\begin{equation*}
+	\begin{cases}
+		u^{\dagger}\bigg(\dfrac{\partial u^{\dagger}}{\partial\xi_1} - \dfrac{\partial \mu}{\partial\xi_1}\dfrac{\partial u^{\dagger}}{\partial\theta} \bigg)+ w^{\dagger}\bigg(\dfrac{\partial u^{\dagger}}{\partial\xi_2} - \dfrac{\partial \mu}{\partial\xi_2}\dfrac{\partial u^{\dagger}}{\partial\theta} \bigg) + \\ 
+		\quad \hfill +v^{\dagger}\dfrac{\partial u^{\dagger}}{\partial\theta} + \dfrac{\partial p_2^{\text{II}}}{\partial \xi_1}\bigg|_{\tau=0} -  \dfrac{\partial^2u^{\dagger}}{\partial\theta^2} =0, 
+		\\[2ex]
+		 v^{\dagger}\dfrac{\partial w^{\dagger}}{\partial\theta} + w^{\dagger} \bigg(\dfrac{\partial w^{\dagger}}{\partial\xi_2} - \dfrac{\partial \mu}{\partial\xi_2}\dfrac{\partial w^{\dagger}}{\partial\theta} \bigg) + u^{\dagger} \bigg(\dfrac{\partial w^{\dagger}}{\partial\xi_1} - \dfrac{\partial \mu}{\partial\xi_1}\dfrac{\partial w^{\dagger}}{\partial\theta} \bigg)-\\ \quad \hfill - \dfrac{\partial^2 w^\dagger}{\partial \theta^2}= 0,
+		 \\[2ex]
+		\dfrac{\partial u^{\dagger}}{\partial\xi_1} - \dfrac{\partial \mu}{\partial\xi_1}\dfrac{\partial u^{\dagger}}{\partial\theta} + \dfrac{\partial w^{\dagger}}{\partial\xi_2} - \dfrac{\partial \mu}{\partial\xi_2}\dfrac{\partial w^{\dagger}}{\partial\theta} + \dfrac{\partial v^{\dagger}}{\partial \theta} = 0,
+	\end{cases}
+\end{equation*}
+
+
 \end{document}
